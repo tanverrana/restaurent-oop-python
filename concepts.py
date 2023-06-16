@@ -7,7 +7,7 @@
 use case
 classes
 1. User: base class(ABC)
-2. customer(User)
+2. Customer(User)
 3. Employee(User)
 4. Chef(Employee)
 5. Manager(Employee)
