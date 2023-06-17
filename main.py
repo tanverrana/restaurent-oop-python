@@ -29,10 +29,24 @@ def main():
     menu.show_menu()
 
     restaurant = Restaurant('TS Restaurant', 1500, menu)
-    # add manager
+    # add employees
     manager = Manager('Tanver rana', 1234, 'tanver@gmai.com',
                       'Meherpur', 1200, '1st january 2023', 'Core')
     restaurant.add_employee('manager', manager)
+
+    chef = Chef('Messi', 10, 'messi@football.com', 'Argentina',
+                450, '1st january 2023', 'chef', 'burger')
+    restaurant.add_employee('chef', chef)
+    server = Server('Neymar', 11, 'neymar@football.com',
+                    'Brazil', 250, 'February 2024', 'server')
+    restaurant.add_employee('server', server)
+
+    # show employee
+    restaurant.show_employees()
+
+    # customer
+    customer_1 = Customer(
+        'Shakaib', 75, 'shakib@cricket.com', 'Magora', 120000)
 
 
 if __name__ == '__main__':

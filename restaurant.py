@@ -37,3 +37,11 @@ class Restaurant:
     def pay_salary(self, employee):
         if employee.salary < self.balance:
             employee.receive_salary()
+
+    def show_employees(self):
+        print('----------Showing Employees---------')
+        if self.chef is not None:
+            print(f'Chef: {self.chef.name} with salary: {self.chef.salary}')
+        if self.server is not None:
+            print(
+                f'Server: {self.server.name} with salary: {self.server.salary}')
