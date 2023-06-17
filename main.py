@@ -12,6 +12,10 @@ def main():
     menu.add_menu_item('pizza', pizza_3)
 
     # add burger to the menu
+    burger_1 = Burger('Chicken Burger', 270, 'Chicken', ['bread', 'Chicken'])
+    menu.add_menu_item('burger', burger_1)
+    burger_2 = Burger('Beef Burger', 470, 'Beef', ['bread', 'beef'])
+    menu.add_menu_item('burger', burger_2)
 
 
 if __name__ == '__main__':
