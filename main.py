@@ -55,8 +55,31 @@ def main():
     # customer one paying for order_1
     restaurant.receive_payment(order_1, 1700, customer_1)
 
-    print('Revenue and balance: ', restaurant.revenue, restaurant.balance)
+    print('Revenue and balance after first customer: ',
+          restaurant.revenue, restaurant.balance)
+
+    # customer-2 placing an order
+    customer_2 = Customer(
+        'Tammim', 28, 'tammim@cricket.com', 'Chittagong', 100000)
+    order_2 = Order(customer_2, [pizza_2, coke])
+    customer_2.pay_for_order(order_2)
+    restaurant.add_order(order_2)
+
+    # customer one paying for order_2
+    restaurant.receive_payment(order_2, 1800, customer_2)
+    print('Revenue and balance after second customer: ',
+          restaurant.revenue, restaurant.balance)
+
+    # pay rent
+    restaurant.pay_expense(restaurant.rent, 'Rent')
+    print('After rent: ', restaurant.revenue,
+          restaurant.balance, restaurant.expense)
+
+    restaurant.pay_salary(chef)
+    print('After slary: ', restaurant.revenue,
+          restaurant.balance, restaurant.expense)
 
 
+# call the main
 if __name__ == '__main__':
     main()
