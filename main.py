@@ -1,6 +1,7 @@
 from menu import Pizza, Burger, Drinks, Menu
 from restaurant import Restaurant
 from users import Chef, Customer, Server, Manager
+from order import Order
 
 
 def main():
@@ -44,9 +45,17 @@ def main():
     # show employee
     restaurant.show_employees()
 
-    # customer
+    # customer-1 placing an order
     customer_1 = Customer(
         'Shakaib', 75, 'shakib@cricket.com', 'Magora', 120000)
+    order_1 = Order(customer_1, [pizza_3, coffee])
+    customer_1.pay_for_order(order_1)
+    restaurant.add_order(order_1)
+
+    # customer one paying for order_1
+    restaurant.receive_payment(order_1, 1700, customer_1)
+
+    print('Revenue and balance: ', restaurant.revenue, restaurant.balance)
 
 
 if __name__ == '__main__':
