@@ -1,4 +1,6 @@
 from menu import Pizza, Burger, Drinks, Menu
+from restaurant import Restaurant
+from users import Chef, Customer, Server, Manager
 
 
 def main():
@@ -16,6 +18,21 @@ def main():
     menu.add_menu_item('burger', burger_1)
     burger_2 = Burger('Beef Burger', 470, 'Beef', ['bread', 'beef'])
     menu.add_menu_item('burger', burger_2)
+
+    # add drinks to the menu
+    coke = Drinks('coke', 40, True)
+    menu.add_menu_item('drinks', coke)
+    coffee = Drinks('Coffee', 60, False)
+    menu.add_menu_item('drinks', coffee)
+
+    # show menu
+    menu.show_menu()
+
+    restaurant = Restaurant('TS Restaurant', 1500, menu)
+    # add manager
+    manager = Manager('Tanver rana', 1234, 'tanver@gmai.com',
+                      'Meherpur', 1200, '1st january 2023', 'Core')
+    restaurant.add_employee('manager', manager)
 
 
 if __name__ == '__main__':
